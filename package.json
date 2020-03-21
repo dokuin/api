@@ -1,0 +1,39 @@
+{
+  "name": "dokuin-api",
+  "version": "1.0.0",
+  "description": "The API of the only Easy Documentation Maker!",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dokuin/dokuin-api.git"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "dokuin",
+    "dokuinjs",
+    "documentation"
+  ],
+  "author": "DokuIn Developers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dokuin/dokuin-api/issues"
+  },
+  "homepage": "https://github.com/dokuin/dokuin-api#readme",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "graphql-tools": "^4.0.7",
+    "http-errors": "^1.7.3",
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
