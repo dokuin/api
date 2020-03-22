@@ -2,7 +2,7 @@ FROM node:12.16.1-alpine
 
 WORKDIR /usr/local/application
 
-ENV PORT=4000
+ENV PORT=3002
 
 RUN apk add --no-cache tini
 
@@ -18,7 +18,7 @@ RUN npm i && npm cache clean --force
 
 COPY . .
 
-EXPOSE 4000
+EXPOSE 3002
 
 ENTRYPOINT [ "/sbin/tini", "--" ]
 
