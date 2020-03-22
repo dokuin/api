@@ -27,7 +27,7 @@ const documentationQueryResolver = {
   }
 };
 
-const documentationMutationesolver = {
+const documentationMutationResolver = {
   createDocumentation: async (_, args) => {
     try {
       const { userId, token, name, owner, rawContent, type, endpoints } = args;
