@@ -8,7 +8,7 @@ services:
     environment: 
       MONGO_INITDB_DATABSE: 'dokuin-api'
     volumes: 
-      - mongodb_data_container: /data/db
+      - mongodb_data_container:/data/db
   api:
     build: 
       context: ./
@@ -28,7 +28,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - './services/users:/usr/local/application'
-      - '/usr/local/application'
+      - '/usr/local/application/node_modules'
     ports: 
       - '3001:3001'
     depends_on: 
@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - './services/projects:/usr/local/application'
-      - '/usr/local/application'
+      - '/usr/local/application/node_modules'
     ports: 
       - '3002:3002'
     depends_on: 
@@ -54,7 +54,7 @@ services:
       dockerfile: Dockerfile
     volumes: 
       - './services/documentations:/usr/local/application'
-      - '/usr/local/application'
+      - '/usr/local/application/node_modules'
     ports: 
       - '3003:3003'
     depends_on: 
