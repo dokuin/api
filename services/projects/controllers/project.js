@@ -55,7 +55,7 @@ class ProjectController {
   static update(req, res, next) {
     const { userId, projectId } = req.params;
     const { name, owner, members, documentations } = req.body;
-    Project.findByIdAndUpdate(
+    Project.update(
       {
         _id: ObjectId(projectId),
         userId: ObjectId(userId)
@@ -77,7 +77,7 @@ class ProjectController {
 
   static delete(req, res, next) {
     const { userId, projectId } = req.params;
-    Project.findByIdAndDelete({
+    Project.deleteOne({
       _id: ObjectId(projectId),
       userId: ObjectId(userId)
     })
