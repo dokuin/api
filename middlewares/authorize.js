@@ -27,19 +27,19 @@ class Authorization {
   }
 
   static authorizeProject(req, res, next) {
-    const {userId, projectId} = req.params;
+    const { userId, projectId } = req.params;
     Project.findById({
       _id: ObjectId(projectId)
     })
       .then(project => {
         if (!project) {
-          throw createError(404, {message: `Project not found!`});
+          throw createError(404, { message: `Project not found!` });
         } else if (project.userId !== ObjectId(userId)) {
           const projectMembers = project.members.filter(member => {
-            return member._id === ObjectId(userId)
+            return member._id === ObjectId(userId);
           });
           if (projectMembers.length <= 0) {
-            throw createError(401, {message: `You are not authorized!`});
+            throw createError(401, { message: `You are not authorized!` });
           } else {
             next();
           }
@@ -49,10 +49,29 @@ class Authorization {
       })
       .catch(err => {
         next(err);
-      })
+      });
   }
 
   static authorizeDocumentation(req, res, next) {
-    
+    const { userId, documentationId } = req.params;
+    Documentation.findById({
+      _id: ObjectId(documentationId)
+    })
+      .then(documentation => {
+        if (!documentation) {
+          throw createError(404, { message: `Documentation not found!` });
+        } else if (documentation.userId !== userId) {
+          throw createError(401, { message: `You are not authorized!` });
+        } else {
+          next();
+        }
+      })
+      .catch(err => {
+        next(err);
+      });
   }
 }
+
+const authorize = Authorization;
+
+module.exports = authorize;
