@@ -32,9 +32,11 @@
     "graphql": "^14.6.0",
     "graphql-tools": "^4.0.7",
     "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.5"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
   }
 }

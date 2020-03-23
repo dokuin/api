@@ -1,5 +1,9 @@
 'use strict';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const { ApolloServer } = require('apollo-server');
 const mergedSchemas = require('./schemas');
 const server = new ApolloServer({
