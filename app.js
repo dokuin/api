@@ -5,9 +5,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const { ApolloServer } = require('apollo-server');
-const mergedSchemas = require('./schemas');
+const typeDefs = require('./typeDefs');
 const server = new ApolloServer({
-  schema: mergedSchemas
+  schema: typeDefs
 });
 
 server
