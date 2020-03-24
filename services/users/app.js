@@ -7,7 +7,7 @@ const port = process.env.PORT || 3001;
 const mongoose = require('mongoose');
 
 const router = require('./routes');
-const { errorHandler } = require('../../middlewares');
+const { errorHandler } = require('./middlewares');
 
 mongoose
   .connect(`mongodb://mongodb:27017/dokuin-api`, {
@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', router);
+app.use('/users', router);
 app.use(errorHandler);
 
 app.listen(port, () => {

@@ -28,14 +28,16 @@ const projectQueryResolver = {
 const projectMutationResolver = {
   createProject: async (_, args) => {
     try {
-      const { userId, name, owner, members, documentations, token } = args;
+      const { name, userId, baseUrl, description, members, endpoints, token } = args;
       const { data } = await projectAPI.post(
         `/${userId}`,
         {
           name,
+          baseUrl,
+          description,
           owner,
           members,
-          documentations
+          endpoints
         },
         { headers: { token } }
       );
@@ -50,18 +52,21 @@ const projectMutationResolver = {
         projectId,
         userId,
         name,
-        owner,
+        baseUrl,
+        description,
         members,
-        documentations,
+        endpoints,
         token
       } = args;
       const { data } = await projectAPI.put(
         `/${userId}/${projectId}`,
         {
           name,
+          baseUrl,
+          description,
           owner,
           members,
-          documentations
+          endpoints
         },
         { headers: { token } }
       );
