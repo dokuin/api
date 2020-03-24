@@ -6,65 +6,59 @@ const { Project } = require('../models');
 
 class ProjectController {
   static findAll(req, res, next) {
-    const { userId } = req.params;
+    const { ownerId } = req.params;
     Project.find({
-      _id: userId
+      ownerId: ObjectId(ownerId)
     })
       .then(projects => {
         if (!projects) {
-          throw createError(404, { message: `Project not found!` });
+          throw createError(404, { name: 'NotFound', message: `Project not found!` });
         } else {
           res.status(200).json({ projects });
         }
       })
-      .catch(err => {
-        next(err);
-      });
+      .catch(next);
   }
 
   static findOne(req, res, next) {
-    const { userId, projectId } = req.params;
-    Project.find({
+    const { ownerId, projectId } = req.params;
+    Project.findOne({
       _id: ObjectId(projectId),
-      userId: ObjectId(userId)
+      ownerId: ObjectId(ownerId)
     })
       .then(project => {
-        if (!project) {
-          throw createError(404, { message: `Project not found!` });
-        } else {
-          res.status(200).json({ project });
-        }
+        res.status(200).json({ project });
       })
-      .catch(err => {
-        next(err);
-      });
+      .catch(next);
   }
 
   static create(req, res, next) {
-    const { userId } = req.params;
-    const { name, owner, members, documentations } = req.body;
-    Project.create({ userId, name, owner, members, documentations })
+    const { ownerId } = req.params;
+    const { name, baseUrl, description, members, endpoints } = req.body;
+    Project.create({ name, ownerId, baseUrl, description, members, endpoints })
       .then(project => {
         res.status(201).json({ project });
       })
-      .catch(err => {
-        next(err);
-      });
+      .catch(next);
   }
 
   static update(req, res, next) {
-    const { userId, projectId } = req.params;
-    const { name, owner, members, documentations } = req.body;
-    Project.update(
+    const { ownerId, projectId } = req.params;
+    const { name, baseUrl, description, members, endpoints } = req.body;
+    Project.findOneAndUpdate(
       {
         _id: ObjectId(projectId),
-        userId: ObjectId(userId)
+        ownerId: ObjectId(ownerId)
       },
       {
-        name,
-        owner,
-        members,
-        documentations
+        name, 
+        baseUrl, 
+        description, 
+        members, 
+        endpoints
+      },
+      {
+        new: true
       }
     )
       .then(project => {
@@ -76,10 +70,10 @@ class ProjectController {
   }
 
   static delete(req, res, next) {
-    const { userId, projectId } = req.params;
-    Project.deleteOne({
+    const { ownerId, projectId } = req.params;
+    Project.findOneAndDelete({
       _id: ObjectId(projectId),
-      userId: ObjectId(userId)
+      ownerId: ObjectId(ownerId)
     })
       .then(project => {
         res.status(200).json({ project });

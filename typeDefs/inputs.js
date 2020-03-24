@@ -19,6 +19,16 @@ const inputTypeDefs = gql`
     rawContent: String
     type: String
   }
+
+  input EndpointInput {
+    projectId: ID
+    method: String
+    path: String
+    description: String
+    headers: [String]
+    queryParams: [String]
+    body: [String]
+  }
 `;
 
 module.exports = inputTypeDefs;

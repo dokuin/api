@@ -1,21 +1,47 @@
 'use strict';
 
 module.exports = (err, req, res, next) => {
-  switch (err.status) {
-    case 400:
-      res.status(400).json({ message: err.message });
-      break;
+  try {
+    switch (err.name) {
+      case 'Unauthorized':
+        res.json({
+          statusCode: 401,
+          message: err.message
+        })
+        break;
 
-    case 401:
-      res.status(401).json({ message: err.message });
-      break;
+      case 'AuthenticationFailed':
+        res.json({
+          statusCode: 403,
+          message: err.message
+        })
+        break;
 
-    case 404:
-      res.status(404).json({ message: err.message });
-      break;
-
-    default:
-      res.status(500).json({ message: `Internal server error!` });
-      break;
+      case 'NotFound':
+        res.json({
+          statusCode: 404,
+          message: err.message
+        })
+        break;
+    
+      default:
+        if(!err.errors){
+          res.json({
+            statusCode: 500,
+            message: 'Server Error'
+          })
+        }else{
+          res.json({
+            statusCode: 400,
+            message: err.errors
+          })
+        }
+        break;
+    }
+  } catch (error) {
+    res.json({
+      statusCode: 500,
+      message: 'Server Error'
+    })
   }
 };

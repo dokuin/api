@@ -1,12 +1,10 @@
 'use strict';
 
 const router = require('express').Router();
-const { ProjectController } = require('../controllers');
+const endpointRoutes = require('./endpoint');
+const projectRoutes = require('./project');
 
-router.get(`/:userId`, ProjectController.findAll);
-router.get(`/:userId/:projectId`, ProjectController.findOne);
-router.post(`/:userId`, ProjectController.create);
-router.put(`/:userId/:projectId`, ProjectController.update);
-router.delete(`/:userId/:projectId`, ProjectController.delete);
+router.use('/projects', projectRoutes)
+router.use('/endpoints', endpointRoutes)
 
 module.exports = router;

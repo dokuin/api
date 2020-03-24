@@ -37,7 +37,7 @@ const userSchema = new Schema({
   }
 });
 
-userSchema.pre('save', next => {
+userSchema.pre('save', function(next) {
   this.password = encrypt.hashSync(this.password, 10);
   next();
 });

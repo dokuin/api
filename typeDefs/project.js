@@ -7,9 +7,10 @@ const projectTypeDefs = gql`
     projectId: ID
     userId: ID
     name: String
-    owner: String
+    baseUrl: String
+    description: String
     members: [User]
-    documentations: [Documentation]
+    endpoints: [Endpoint]
   }
 
   extend type Query {
@@ -24,18 +25,20 @@ const projectTypeDefs = gql`
     createProject(
       userId: ID
       name: String
-      owner: String
+      baseUrl: String
+      description: String
       members: [UserInput]
-      documentations: [DocumentationInput]
+      endpoints: [EndpointInput]
       token: String
     ): Project
     updateProject(
       projectId: ID
       userId: ID
       name: String
-      owner: String
+      baseUrl: String
+      description: String
       members: [UserInput]
-      documentations: [DocumentationInput]
+      endpoints: [EndpointInput]
       token: String
     ): Project
     deleteProject(

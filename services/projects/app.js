@@ -7,7 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const router = require('./routes');
-const { errorHandler } = require('../../middlewares');
+const { errorHandler } = require('./middlewares');
 
 mongoose
   .connect(`mongodb://mongodb:27017/dokuin-api`, {
