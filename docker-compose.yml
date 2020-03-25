@@ -48,6 +48,5 @@ services:
       - mongodb
     links: 
       - mongodb
-
 volumes:
   mongodb_data_container:
