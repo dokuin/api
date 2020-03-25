@@ -48,10 +48,6 @@ services:
       - mongodb
     links: 
       - mongodb
-  documentations:
-    build: 
-      context: ./services/documentations
-      dockerfile: Dockerfile
     volumes: 
       - './services/documentations:/usr/local/application'
       - '/usr/local/application/node_modules'

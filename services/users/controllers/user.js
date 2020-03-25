@@ -36,7 +36,7 @@ class UserController {
             email,
             username
           }
-          const token = jwt.sign(users, process.env.JWT_SECRET_KEY)
+          const token = jwt.sign(users, 'DokuinJs')
           res.status(200).json({
             token,
             user: users
@@ -49,7 +49,6 @@ class UserController {
       }
     })
     .catch(err => {
-      console.log(err)
       next(err)
     })
   }

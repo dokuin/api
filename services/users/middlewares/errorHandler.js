@@ -10,6 +10,10 @@ module.exports = (err, req, res, next) => {
       res.status(401).json({ message: err.message });
       break;
 
+    case 403:
+      res.status(401).json({ message: err.message });
+      break;
+
     case 404:
       res.status(404).json({ message: err.message });
       break;
