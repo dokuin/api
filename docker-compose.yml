@@ -23,7 +23,7 @@ services:
     links: 
       - mongodb
     environment: 
-      - JWT_SECRET_KEY='I LOVE SECRETS'
+      - JWT_SECRET_KEY=I LOVE SECRETS
   users:
     build: 
       context: ./services/users
@@ -38,7 +38,7 @@ services:
     links: 
       - mongodb
     environment: 
-      - JWT_SECRET_KEY='I LOVE SECRETS'
+      - JWT_SECRET_KEY=I LOVE SECRETS
   projects:
     build: 
       context: ./services/projects
@@ -53,7 +53,7 @@ services:
     links: 
       - mongodb
     environment: 
-      - JWT_SECRET_KEY='I LOVE SECRETS'
+      - JWT_SECRET_KEY=I LOVE SECRETS
 
 volumes:
   mongodb_data_container:
