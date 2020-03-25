@@ -1,7 +1,7 @@
 'use strict';
 
 const projectAPI = require('axios').default.create({
-  baseURL: 'http://localhost:3002/projects'
+  baseURL: 'http://projects:3002/projects'
 });
 
 const projectQueryResolver = {

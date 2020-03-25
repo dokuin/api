@@ -1,7 +1,7 @@
 'use strict';
 
 const userAPI = require('axios').default.create({
-  baseURL: 'http://localhost:3001/users'
+  baseURL: 'http://users:3001/users'
 });
 
 const userQueryResolver = {
