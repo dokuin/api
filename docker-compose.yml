@@ -9,6 +9,8 @@ services:
       MONGO_INITDB_DATABSE: 'dokuin-api'
     volumes: 
       - mongodb_data_container:/data/db
+    environment: 
+      - JWT_SECRET_KEY='I LOVE SECRETS'
   api:
     build: 
       context: ./
@@ -22,8 +24,6 @@ services:
       - mongodb
     links: 
       - mongodb
-    environment: 
-      - JWT_SECRET_KEY='I LOVE SECRETS'
   users:
     build: 
       context: ./services/users
