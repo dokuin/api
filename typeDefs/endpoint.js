@@ -34,8 +34,13 @@ const endpointTypeDefs = gql`
   }
 
   extend type Query {
-    endpoints: [Endpoint]
-    findOneEndpoint: Endpoint
+    endpoints(
+      projectId: ID
+    ): [Endpoint]
+    findOneEndpoint(
+      projectId: ID
+      endpointId: ID
+    ): Endpoint
   }
 
   extend type Mutation {
@@ -52,14 +57,14 @@ const endpointTypeDefs = gql`
 
     updateEndpoint(
       token: String
-        projectId: ID
-        endpointId: ID
-        method: String
-        path: String
-        description: String
-        headers: Object
-        queryParams: Object
-        body: Object
+      projectId: ID
+      endpointId: ID
+      method: String
+      path: String
+      description: String
+      headers: Object
+      queryParams: Object
+      body: Object
     ) : Endpoint
 
     deleteEndpoint(
