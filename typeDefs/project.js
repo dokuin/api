@@ -5,7 +5,7 @@ const { gql } = require('apollo-server');
 const projectTypeDefs = gql`
   type Project {
     projectId: ID
-    userId: ID
+    ownerId: ID
     name: String
     baseUrl: String
     description: String
@@ -14,16 +14,16 @@ const projectTypeDefs = gql`
   }
 
   extend type Query {
-    projects(userId: ID): [Project]
+    projects(ownerId: ID): [Project]
     findOneProject(
-      userId: ID
+      ownerId: ID
       projectId: ID
     ): Project
   }
 
   extend type Mutation {
     createProject(
-      userId: ID
+      ownerId: ID
       name: String
       baseUrl: String
       description: String
@@ -33,7 +33,7 @@ const projectTypeDefs = gql`
     ): Project
     updateProject(
       projectId: ID
-      userId: ID
+      ownerId: ID
       name: String
       baseUrl: String
       description: String
@@ -42,7 +42,7 @@ const projectTypeDefs = gql`
       token: String
     ): Project
     deleteProject(
-      userId: ID
+      ownerId: ID
       projectId: ID
       token: String
     ): Project

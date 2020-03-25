@@ -4,7 +4,7 @@ services:
   mongodb:
     image: mongo:latest
     ports:
-      - 27018:27017
+      - 27017
     environment: 
       MONGO_INITDB_DATABSE: 'dokuin-api'
     volumes: 
@@ -48,15 +48,5 @@ services:
       - mongodb
     links: 
       - mongodb
-    volumes: 
-      - './services/documentations:/usr/local/application'
-      - '/usr/local/application/node_modules'
-    ports: 
-      - '3003:3003'
-    depends_on: 
-      - mongodb
-    links: 
-      - mongodb
-
 volumes:
   mongodb_data_container:

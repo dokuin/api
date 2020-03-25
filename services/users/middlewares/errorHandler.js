@@ -19,7 +19,17 @@ module.exports = (err, req, res, next) => {
       break;
 
     default:
-      res.status(500).json({ message: `Internal server error!` });
+      if(!err.errors){
+        res.json({
+          statusCode: 500,
+          message: 'Server Error'
+        })
+      }else{
+        res.json({
+          statusCode: 400,
+          message: err.errors
+        })
+      }
       break;
   }
 };

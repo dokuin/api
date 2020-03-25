@@ -1,14 +1,14 @@
 'use strict';
 
 const projectAPI = require('axios').default.create({
-  baseURL: 'http://localhost:3002/projects'
+  baseURL: 'http://projects:3002/projects'
 });
 
 const projectQueryResolver = {
   projects: async (_, args) => {
     try {
-      const { userId } = args;
-      const { data } = await projectAPI.get(`/${userId}`);
+      const { ownerId } = args;
+      const { data } = await projectAPI.get(`/${ownerId}`);
       return data.projects;
     } catch (err) {
       return err;
@@ -16,8 +16,8 @@ const projectQueryResolver = {
   },
   findOneProject: async (_, args) => {
     try {
-      const { userId, projectId } = args;
-      const { data } = await projectAPI.get(`/${userId}/${projectId}`);
+      const { ownerId, projectId } = args;
+      const { data } = await projectAPI.get(`/${ownerId}/${projectId}`);
       return data.project;
     } catch (err) {
       return err;
@@ -28,9 +28,9 @@ const projectQueryResolver = {
 const projectMutationResolver = {
   createProject: async (_, args) => {
     try {
-      const { name, userId, baseUrl, description, members, endpoints, token } = args;
+      const { name, ownerId, baseUrl, description, members, endpoints, token } = args;
       const { data } = await projectAPI.post(
-        `/${userId}`,
+        `/${ownerId}`,
         {
           name,
           baseUrl,
@@ -50,7 +50,7 @@ const projectMutationResolver = {
     try {
       const {
         projectId,
-        userId,
+        ownerId,
         name,
         baseUrl,
         description,
@@ -59,7 +59,7 @@ const projectMutationResolver = {
         token
       } = args;
       const { data } = await projectAPI.put(
-        `/${userId}/${projectId}`,
+        `/${ownerId}/${projectId}`,
         {
           name,
           baseUrl,
@@ -77,8 +77,8 @@ const projectMutationResolver = {
   },
   deleteProject: async (_, args) => {
     try {
-      const { userId, projectId, token } = args;
-      const { data } = await projectAPI.delete(`/${userId}/${projectId}`, {
+      const { ownerId, projectId, token } = args;
+      const { data } = await projectAPI.delete(`/${ownerId}/${projectId}`, {
         headers: { token }
       });
       return data.project;
