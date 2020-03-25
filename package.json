@@ -4,7 +4,8 @@
   "description": "The API of the only Easy Documentation Maker!",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "build": "docker-compose up -d --build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
     "graphql-tools": "^4.0.7"
   },
   "devDependencies": {
+    "apollo-server-testing": "^2.11.0",
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2"
   }
 }

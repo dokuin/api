@@ -13,3 +13,5 @@ const server = new ApolloServer({
 server
   .listen()
   .then(({ url }) => console.log(`DokuIn API is running at ${url}`));
+
+module.exports = server;
