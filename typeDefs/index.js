@@ -7,6 +7,8 @@ const projectTypeDefs = require('./project');
 const inputTypeDefs = require('./inputs');
 const endpointTypeDefs = require('./endpoint');
 
+const { ObjectScalarType } = require('./scalars');
+
 const {
   userQueryResolver,
   userMutationResolver
@@ -16,15 +18,23 @@ const {
   projectMutationResolver
 } = require('../resolvers/project');
 
+const {
+  endpointQueryResolver,
+  endpointMutationResolver
+} = require('../resolvers/endpoint');
+
 const resolvers = {
   Query: {
     ...userQueryResolver,
-    ...projectQueryResolver
+    ...projectQueryResolver,
+    ...endpointQueryResolver
   },
   Mutation: {
     ...userMutationResolver,
-    ...projectMutationResolver
-  }
+    ...projectMutationResolver,
+    ...endpointMutationResolver
+  },
+  Object: ObjectScalarType
 };
 
 const schema = makeExecutableSchema({
