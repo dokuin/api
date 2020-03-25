@@ -10,12 +10,26 @@ module.exports = (err, req, res, next) => {
       res.status(401).json({ message: err.message });
       break;
 
+    case 403:
+      res.status(401).json({ message: err.message });
+      break;
+
     case 404:
       res.status(404).json({ message: err.message });
       break;
 
     default:
-      res.status(500).json({ message: `Internal server error!` });
+      if(!err.errors){
+        res.json({
+          statusCode: 500,
+          message: 'Server Error'
+        })
+      }else{
+        res.json({
+          statusCode: 400,
+          message: err.errors
+        })
+      }
       break;
   }
 };
