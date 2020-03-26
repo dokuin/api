@@ -92,3 +92,7 @@ describe('Project API Test', () => {
   });
 });
 
+afterAll(() => {
+  process.env.PROJECT_ID = projectId;
+});
+
