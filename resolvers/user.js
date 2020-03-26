@@ -34,7 +34,15 @@ const userMutationResolver = {
         email,
         password
       });
-      return data.user;
+      const user = {
+        userId: data.user._id,
+        fullName: data.user.fullName,
+        username: data.user.username,
+        profilePicURL: data.user.profilePicURL,
+        email: data.user.email,
+        password: data.user.password
+      };
+      return user;
     } catch (err) {
       return err;
     }

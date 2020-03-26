@@ -10,7 +10,7 @@ const router = require('./routes');
 const { errorHandler } = require('./middlewares');
 
 mongoose
-  .connect(`mongodb://mongodb:27017/dokuin-api`, {
+  .connect(`mongodb://${process.env.NODE_ENV === 'test' ? 'localhost:27017/dokuin-api-test' : 'mongodb:27017/dokuin-api'}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,

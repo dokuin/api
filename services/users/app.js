@@ -1,5 +1,7 @@
 'use stricts';
 
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -10,7 +12,7 @@ const router = require('./routes');
 const { errorHandler } = require('./middlewares');
 
 mongoose
-  .connect(`mongodb://mongodb:27017/dokuin-api`, {
+  .connect(`mongodb://${process.env.NODE_ENV === 'test' ? 'localhost:27017/dokuin-api-test' : 'mongodb:27017/dokuin-api'}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
@@ -33,3 +35,5 @@ app.use(errorHandler);
 app.listen(port, () => {
   console.log(`DokuIn API User Service is running on PORT ${port}!`);
 });
+
+module.exports = app;
