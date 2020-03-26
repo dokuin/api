@@ -11,8 +11,7 @@ const userSchema = new Schema({
   },
   username: {
     type: String,
-    required: [true, `Username cannot be empty!.`],
-    unique: [true, `Username is not avalable.`]
+    required: [true, `Username cannot be empty!.`]
   },
   profilePicURL: {
     type: String
@@ -20,7 +19,6 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: [true, `Email cannot be empty!`],
-    unique: [true, `Email is already taken.`],
     validate: {
       validator: email => {
         const emailFormat = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

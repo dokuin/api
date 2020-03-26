@@ -4,7 +4,7 @@
   "description": "The API of the only Easy Documentation Maker!",
   "main": "app.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --forceExit",
     "build": "docker-compose up -d --build"
   },
   "repository": {
@@ -29,11 +29,18 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "graphql": "^14.6.0",
-    "graphql-tools": "^4.0.7"
+    "graphql-tools": "^4.0.7",
+    "mongoose": "^5.9.6"
   },
   "devDependencies": {
-    "apollo-server-testing": "^2.11.0",
-    "jest": "^25.1.0",
-    "nodemon": "^2.0.2"
+    "jest": "^25.2.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

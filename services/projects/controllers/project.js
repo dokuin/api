@@ -34,8 +34,8 @@ class ProjectController {
 
   static create(req, res, next) {
     const { ownerId } = req.params;
-    const { name, baseUrl, description, members, endpoints } = req.body;
-    Project.create({ name, ownerId, baseUrl, description, members, endpoints })
+    const { name, baseURL, description, members, endpoints } = req.body;
+    Project.create({ name, ownerId, baseURL, description, members, endpoints })
       .then(project => {
         res.status(201).json({ project });
       })
@@ -44,7 +44,7 @@ class ProjectController {
 
   static update(req, res, next) {
     const { ownerId, projectId } = req.params;
-    const { name, baseUrl, description, members, endpoints } = req.body;
+    const { name, baseURL, description, members, endpoints } = req.body;
     Project.findOneAndUpdate(
       {
         _id: ObjectId(projectId),
@@ -52,7 +52,7 @@ class ProjectController {
       },
       {
         name, 
-        baseUrl, 
+        baseURL, 
         description, 
         members, 
         endpoints

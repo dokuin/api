@@ -12,11 +12,11 @@ class EndpointController {
       projectId: ObjectId(projectId)
     })
     .then(endpoints => {
-      if(endpoints.length === 0){
-        throw createError(404, { name: 'NotFound', message: `Endpoint not found!` });
-      }else{
-        res.status(200).json({ endpoints })
-      }
+      // if(endpoints.length === 0){
+      //   throw createError(404, { name: 'NotFound', message: `Endpoint not found!` });
+      // }else{
+      res.status(200).json({ endpoints });
+      // }
     })
     .catch(next)
   }
@@ -70,7 +70,7 @@ class EndpointController {
      }
     )
     .then(endpoint => {
-      res.status(200).json({ endpoint })
+      res.status(200).json({ endpoint });
     })
     .catch(next)
   }
