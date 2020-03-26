@@ -14,7 +14,6 @@ class UserController {
         res.status(201).json({ user });
       })
       .catch(err => {
-        console.log(err)
         next(err);
       });
   }
@@ -22,36 +21,34 @@ class UserController {
   static signIn(req, res, next) {
     const { userIdentifier, password } = req.body;
     User.findOne({
-      $or: [
-        { email: userIdentifier },
-        { username: userIdentifier },
-      ]
+      $or: [{ email: userIdentifier }, { username: userIdentifier }]
     })
-    .then(user => {
-      if(user){
-        const { _id, email, username } = user
-        if(encrypt.compareSync(password, user.password)){
-          const users = {
-            _id,
-            email,
-            username
+      .then(user => {
+        if (user) {
+          const { _id, email, username } = user;
+          if (encrypt.compareSync(password, user.password)) {
+            const users = {
+              _id,
+              email,
+              username
+            };
+            const token = jwt.sign(users, process.env.JWT_SECRET_KEY);
+            res.status(200).json({
+              token,
+              user: users
+            });
+          } else {
+            throw createError(403, {
+              message: 'Invalid username or password!'
+            });
           }
-          const token = jwt.sign(users, process.env.JWT_SECRET_KEY)
-          res.status(200).json({
-            token,
-            user: users
-          })
-        }else{
-          throw createError(403, { message: 'Username or password is wrong!' })
+        } else {
+          throw createError(403, { message: `Email doesn't exist!` });
         }
-      }else{
-        throw createError(403, { message: 'Email doesnt exist!' })
-      }
-    })
-    .catch(err => {
-      console.log(err)
-      next(err)
-    })
+      })
+      .catch(err => {
+        next(err);
+      });
   }
 
   static findAll(req, res, next) {
@@ -80,7 +77,10 @@ class UserController {
     const { fullName, username, profilePicURL, email, password } = req.body;
     User.findByIdAndUpdate(
       { _id: ObjectId(req.params.userId) },
-      { fullName, username, profilePicURL, email, password }
+      { fullName, username, profilePicURL, email, password },
+      {
+        new: true
+      }
     )
       .then(user => {
         res.status(200).json({ user });
