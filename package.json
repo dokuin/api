@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/dokuin/dokuin-api#readme",
   "dependencies": {
-    "apollo-server": "^3.10.0",
+    "@apollo/server": "^4.0.0",
     "axios": "^1.6.0",
     "dotenv": "^16.0.1",
     "graphql": "^16.8.1",
