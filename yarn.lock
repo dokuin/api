@@ -1374,9 +1374,9 @@ bser@2.1.1:
     node-int64 "^0.4.0"
 
 bson@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-6.2.0.tgz#4b6acafc266ba18eeee111373c2699304a9ba0a3"
-  integrity sha512-ID1cI+7bazPDyL9wYy9GaQ8gEEohWvcUl/Yf0dIdutJxnmInEEyCsb4awy/OiBfall7zBA179Pahi3vCdFze3Q==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-6.3.0.tgz#d47acba525ba7d7eb0e816c10538bce26a337fe0"
+  integrity sha512-balJfqwwTBddxfnidJZagCBPP/f48zj9Sdp3OJswREOgsJzHiQSaOIAtApSgDQFYgHqAvFkp53AFSqjMDZoTFw==
 
 buffer-from@^1.0.0:
   version "1.1.2"
@@ -2763,9 +2763,9 @@ mongodb@6.3.0:
     mongodb-connection-string-url "^3.0.0"
 
 mongoose@^8.0.0:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.1.1.tgz#2ea2dcdcf4943196f585b3915f63001e79214e1b"
-  integrity sha512-DbLb0NsiEXmaqLOpEz+AtAsgwhRw6f25gwa1dF5R7jj6lS1D8X6uTdhBSC8GDVtOwe5Tfw2EL7nTn6hiJT3Bgg==
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.1.2.tgz#f8a91da3e8c4b7489d4cbf35c20cd6908bbfcbce"
+  integrity sha512-5KMq7k6KmFCIB8/YMKMFsWdsdNkBwuARDRHDRpp5GKC78eT0LwHIaMEKo6gDUg3zBuMoy9OdcM/6f4dkW06C/A==
   dependencies:
     bson "^6.2.0"
     kareem "2.5.1"
