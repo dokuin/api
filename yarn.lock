@@ -2783,9 +2783,9 @@ mongodb@6.7.0:
     mongodb-connection-string-url "^3.0.0"
 
 mongoose@^8.0.0:
-  version "8.5.4"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.5.4.tgz#1003235d715a8914b4ae80b92af935a68ce121eb"
-  integrity sha512-nG3eehhWf9l1q80WuHvp5DV+4xDNFpDWLE5ZgcFD5tslUV2USJ56ogun8gaZ62MKAocJnoStjAdno08b8U57hg==
+  version "8.5.5"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.5.5.tgz#0612b44cc69a06ee4e06a37e1de33389f7a83cec"
+  integrity sha512-bbH9Xwxm5AXc0M8VsqGCZcVTrea+bb5ulVDAA2HXdZbi3DSzH9dDOgAtsmIFDQkEea4o62fh9EjDFYr+B9gNSA==
   dependencies:
     bson "^6.7.0"
     kareem "2.6.3"
