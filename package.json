@@ -30,7 +30,7 @@
     "dotenv": "^17.0.0",
     "graphql": "^16.8.1",
     "graphql-tools": "^9.0.0",
-    "mongoose": "^8.0.0"
+    "mongoose": "^9.0.0"
   },
   "devDependencies": {
     "jest": "^30.0.0",

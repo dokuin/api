@@ -27,7 +27,7 @@
     "express": "^5.0.0",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^8.0.0"
+    "mongoose": "^9.0.0"
   },
   "devDependencies": {
     "dotenv": "^17.0.0"
