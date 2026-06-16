@@ -28,7 +28,7 @@
     "@apollo/server": "^5.0.0",
     "axios": "^1.6.0",
     "dotenv": "^17.0.0",
-    "graphql": "^16.8.1",
+    "graphql": "^17.0.0",
     "graphql-tools": "^9.0.0",
     "mongoose": "^9.0.0"
   },
