@@ -2655,10 +2655,10 @@ json5@^2.2.3:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-kareem@3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/kareem/-/kareem-3.4.0.tgz#66b3d09ac43ba1c8611df2c69fe1424f0acd49b2"
-  integrity sha512-JAKhnR4S027v/8949QXNInRskgETCg9rFUMi1VjhGbjX+XltCAAEFcXykkSocNkom1kc66EMJfjWvhj87BDQKg==
+kareem@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/kareem/-/kareem-3.4.1.tgz#468c10416476f86bcef127d00f937cbb0a029e3b"
+  integrity sha512-UlgCAFNAdk/HLSsbfkmbH8pJqpEN52Ek8RG53Ys1i3Q3gbCQruSrWpplZlgIGyDHX/LNoLW97ei3OG43s7UhUA==
 
 leven@^3.1.0:
   version "3.1.0"
@@ -2824,12 +2824,12 @@ mongodb@~7.7:
     mongodb-connection-string-url "^7.0.2"
 
 mongoose@^9.0.0:
-  version "9.11.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.11.1.tgz#1d21eff376d0b00c44aa4201d933e762f13c56b7"
-  integrity sha512-fVtjTVACOtAb0PjDDF+O5NebcEJy5JpAH+AXk16/5i36w38YkW6MZ+KWV54bdIOJFymDz1VjjA5Xg6L2QfjQjQ==
+  version "9.11.2"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.11.2.tgz#4df6a5cf6ea6a571433cde3f9ba8bd4b1bb2dfd3"
+  integrity sha512-hFkl/2dccpD58coRAya3a/ht8ooAx9YPLzBfxVX9bEsgcrjsNkvuWQe8gplGfDdmzpw2RfFX1IB/G8PiFwyvwg==
   dependencies:
     "@standard-schema/spec" "^1.1.0"
-    kareem "3.4.0"
+    kareem "3.4.1"
     mongodb "~7.7"
     mpath "0.9.0"
     mquery "6.0.0"
