@@ -798,9 +798,9 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@mongodb-js/saslprep@^1.5.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@mongodb-js/saslprep/-/saslprep-1.6.0.tgz#7d2ef0576437562c4f54b39379a9d9c1b8164db7"
-  integrity sha512-19jGXfpctLDJUELLUZGJ5BllcLT7rHdF+gTTaN2jzqu0bGkUhpdcYtgK2Vux+g3zuBAa0TM/W666QMIjYhYujw==
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@mongodb-js/saslprep/-/saslprep-1.6.1.tgz#c3da2d4013e5fe3d22661da3f8ec36b231a30de7"
+  integrity sha512-D4CQtk9IwjCLAvCf1xvHEod3960q8XMUzfmdRU9qjUNlHnesGuTOvJcOTaPm9koZ1caUKA2aTbszZiAkcmSgmg==
   dependencies:
     sparse-bitfield "^3.0.3"
 
@@ -2824,9 +2824,9 @@ mongodb@~7.7:
     mongodb-connection-string-url "^7.0.2"
 
 mongoose@^9.0.0:
-  version "9.11.2"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.11.2.tgz#4df6a5cf6ea6a571433cde3f9ba8bd4b1bb2dfd3"
-  integrity sha512-hFkl/2dccpD58coRAya3a/ht8ooAx9YPLzBfxVX9bEsgcrjsNkvuWQe8gplGfDdmzpw2RfFX1IB/G8PiFwyvwg==
+  version "9.11.3"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-9.11.3.tgz#becf27c2cf04cf442e52509b8f76ad6d60a60bfc"
+  integrity sha512-U6HaDL0A738IHlYiWf5mE4V5G6DPRmcSPh+YDSma8AKCHS+HbugwN4b6EcDSnooSHnrd27K35bKd639j3d079A==
   dependencies:
     "@standard-schema/spec" "^1.1.0"
     kareem "3.4.1"
